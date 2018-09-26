@@ -1,0 +1,37 @@
+<html>
+
+<body>
+    <div>
+        <form method="post">
+            <input type="text" name="lastname" placeholder="Введите фамилию" />
+            <input type="text" name="firstname" placeholder="Введите имя" />
+            <input type="text" name="birthday" placeholder="Введите день рождения" />
+
+            <input type="text" name="email" placeholder="Введите email" />
+            <input type="text" name="password" placeholder="Введите password" />
+
+            <button type="submit">Добавить</button>
+        </form>
+    </div>
+    <div>Список пользователей</div>
+    <form method="post" action="filter">
+        <input type="text" name="filter">
+        <button type="submit">Найти</button>
+    </form>
+    <div>Удалить по id</div>
+    <form method="post" action="delete">
+        <input type="number" name="delete">
+        <button type="submit">Удалить</button>
+    </form>
+    {{#messages}}
+    <div>
+        <b>{{id}}</b>
+        <span>{{firstname}}</span>
+        <span>{{lastname}}</span>
+        <span>{{birthday}}</span>
+        <span>{{password}}</span>
+        <i>{{email}}</i>
+    </div>
+    {{/messages}}
+</body>
+</html>
